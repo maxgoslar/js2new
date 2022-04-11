@@ -22,7 +22,11 @@ const products = [{
 
 
 //  ВОПРОС 2:   
-//     Честно говоря, совсем не понял вопрос.
+//     Честно говоря, не совсем понял вопрос. Поставил значение по
+// умолчанию как значение аргумента в функции renderProduct (строка 42).
+// Для упрощения можно вводить просто константу, которую потом 
+// использовать в качестве аргумента, например. Но пока не понимаю, насколько
+// это вообще  разумно
 
 
 const renderProduct = (title, price) => {
@@ -33,23 +37,23 @@ const renderProduct = (title, price) => {
               </div>`;
 };
 
-// const renderProducts = (list) => {
-//     const productList = list.map((good) => {
-//         return renderProduct(good.title, good.price);
-//     });
-//     document.querySelector('.products').innerHTML = productList;
-
-//     console.log(productList);
-// };
-
-// renderProducts(products);
+const renderProducts = (list) => {
+    const productList = list.map((good) => {
+        return renderProduct(good.title, good.price = "165");
+    });
+    document.querySelector('.products').innerHTML = productList;
+    console.log(productList);
+};
+renderProducts(products);
 
 //  ВОПРОС 3:   
 //     Запятые возникают, потому что выводится по сути весь массив,
 //     все элементы подряд. Запятые отделяют один элемент от другого.
 //     Мое решение заключается в том, чтобы содздать новый массив,
 //     перебрать существующий массив Products и поочередно
-//     к элементу новоого массива добавить HTML каждого элемента в отдельности
+//     к единственному элементу новоого массива добавить HTML каждого элемента 
+//     старого массива по отдельности.
+//     чтобы показать решение, ввел класс productsNew в index.html
 
 
 let productsNew = [];
